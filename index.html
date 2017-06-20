@@ -23,8 +23,8 @@
       img {
           max-width: 100%;
       }
-      
-      
+
+
       @page {
           size: 1210px 681px;
           margin: 0;
@@ -123,6 +123,17 @@ class: center, middle
 
 * CTO, [Sourcegraph](https://sourcegraph.com/)
 
+???
+
+Sourcegraph
+
+* code understanding tool
+
+* code search and browsing
+
+* indexes all of open source, makes it easy to dive in
+
+
 
 ---
 # What this talk is about
@@ -137,14 +148,14 @@ class: center, middle
 <br>
 <center>
 <h2>Follow along:</h2>
-<h2>[TODO: insert bit.ly URL]</h2>
+<h2><a href="https://beyang.github.io/gradle-summit-2017">beyang.github.io/gradle-summit-2017</a></h2>
 </center>
 
 ???
 
-* Can refer to slides as reference later
+* Lots of code snippets => follow along locally!
 
-* Sourcegraph
+* View slides as reference you can refer back to later
 
 ---
 
@@ -153,6 +164,17 @@ Good artists copy. Great artists steal.
 <br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—Picasso
 </div>
+
+--
+
+<div style="height: 100%; position: absolute; top: 50%;">
+Good programmers know what to write.<br>
+Great ones know what to rewrite (and reuse).
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—Eric S. Raymond, *The Cathedral and the Bazaar*
+</div>
+
+
 
 
 
@@ -163,6 +185,10 @@ Good artists copy. Great artists steal.
 <img src="images/feed.png" alt="Wikipedia app" style="width: 32%">
 <img src="images/lists.png" alt="Wikipedia app" style="width: 32%">
 <img src="images/nearby.png" alt="Wikipedia app" style="width: 32%">
+
+???
+
+It's a way to browse Wikipedia.
 
 ---
 # App #1: [Wikipedia](https://play.google.com/store/apps/details?id=org.wikipedia)
@@ -256,24 +282,18 @@ If the Wikipedia app were a book, it'd be half the length of *Moby Dick*.<sup>*<
 
 1. Repeat.
 
-.footer[\* You should understand the answer well enough that implementing it yourself would be "due diligence."]
+.footer[\* Understand it well enough that fixing a related bug would be "due diligence."]
 
 --
 
+<br><br>
 <center>
-<strong>Always have a question in mind you're trying to answer.</strong>
+<h3>Always Be Answering a Question.</h3>
 </center>
 
-???
 
-Many ways to read and understand code. This is just one way. It has
-worked well for me as a professional programmer and worked well for me
-in teaching students as a T.A.
-
-
---
-
-### Some "icebreaker" questions:
+---
+## "Icebreaker" questions:
 
 1. How does it arrive at its initial state?
 
@@ -283,8 +303,7 @@ in teaching students as a T.A.
 
 ???
 
-Just like a conversation with a person, there are a few standard
-"icebreakers" you can use to get the conversation rolling.
+Get the conversation rolling
 
 
 ---
@@ -310,11 +329,11 @@ public class MainActivity {
 
 ???
 
-* Any Android developer knows that Android apps are built around
-  "activities."
+* Android apps revolve around "activities."
 
-* Main activity is called `MainActivity`. The initializer method for
-  an `Activity` instance is `onCreate`, so let's start there.
+* Main activity is called `MainActivity`.
+
+* `onCreate` and `onCreateView` are initializers.
 
 --
 
@@ -473,6 +492,8 @@ public class NavTabLayout extends BottomNavigationView {
 
 ???
 
+How do we get our 4 tabs?
+
 MainFragment -> NavTabLayout
 
 
@@ -502,7 +523,7 @@ public enum NavTab implements EnumCode {
 
 ???
 
-NavTab layout -> FeedFragment.newInstance
+NavTabLayout -> 4 tab options -> FeedFragment.newInstance
 
 
 
@@ -1648,7 +1669,7 @@ A medium-sized [open-source](https://sourcegraph.com/github.com/AntennaPod/Anten
 
 
 ---
-# AntennaPod topics of interest
+# AntennaPod features of interest
 
 * How do you create a navigation menu interface?
 
@@ -1880,7 +1901,7 @@ public class FeedItemMenuHandler {
 ```
 </a>
 
-Download queue processed in background by `Service` subclass:
+Use `Service` subclass to for long background tasks like downloading audio:
 <a href="https://sourcegraph.com/github.com/AntennaPod/AntennaPod@b3a879dd8f938fc3086dfd73c8cb915b1da7cecd/-/blob/core/src/main/java/de/danoeh/antennapod/core/service/download/DownloadService.java?q=DownloaderCallback#L441-447:6">
 ```java
 public class DownloadService extends Service {
@@ -2154,7 +2175,7 @@ Gradle users:
 
 * Adopt conventions
 
-* K.I.S.S.
+* Keep it simple
 
 
 
@@ -2167,6 +2188,10 @@ Gradle users:
 
 1. Use Gradle to build better code understanding tools.
 
+<br>
+<center>
+<h2><a href="https://beyang.github.io/gradle-summit-2017">beyang.github.io/gradle-summit-2017</a></h2>
+</center>
 
 .footer[\* Further reading: [20 open-source Android apps](https://blog.aritraroy.in/20-awesome-open-source-android-apps-to-boost-your-development-skills-b62832cf0fa4)]
 
