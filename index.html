@@ -1946,7 +1946,10 @@ Takeaways
         });
 
         // Header
-        document.querySelectorAll("div.remark-slide-content").forEach(e => {
+        document.querySelectorAll("div.remark-slide-content").forEach((e, i) => {
+            if (i === 0) {
+                return;
+            }
             const h = document.createElement("div");
             h.class = "header";
             h.style.position = "absolute";
