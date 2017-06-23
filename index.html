@@ -108,6 +108,8 @@ class: center, middle
 
 ???
 
+[example GitHub code browser](https://github.com/wikimedia/apps-android-wikipedia/blob/master/app/src/main/java/org/wikipedia/main/MainFragment.java#L74)
+
 [example pull request](https://github.com/wikimedia/apps-android-wikipedia/pull/10/files)
 
 * Intro: 2 min
@@ -550,7 +552,40 @@ public class NavTabLayout extends BottomNavigationView {
 
 
 ---
-### Where do the tabs come from? (continued)
+### Where do the tabs come from? (continued) <!-- 1 -->
+
+*references* `enum NavTab`
+<a href="https://sourcegraph.com/github.com/wikimedia/apps-android-wikipedia@edb0a841475606613ea4f6c3a4cda2d34c62b4e0/-/blob/app/src/main/java/org/wikipedia/navtab/NavTab.java#L16-21:7">
+```java
+public enum NavTab implements EnumCode {
+    EXPLORE(R.string.nav_item_feed, R.drawable.ic_globe) {  
+        @NonNull @Override public Fragment newInstance() {
+            return FeedFragment.newInstance();
+        }
+    },
+    READING_LISTS(R.string.nav_item_reading_lists, R.drawable.ic_bookmark_white_24dp) {  
+        @NonNull @Override public Fragment newInstance() {
+            return ReadingListsFragment.newInstance();
+        }
+    },
+    HISTORY(R.string.nav_item_history, R.drawable.ic_restore_black_24dp) {  
+        @NonNull @Override public Fragment newInstance() {
+            return HistoryFragment.newInstance();
+        }
+    },
+    NEARBY(R.string.nav_item_nearby, R.drawable.ic_explore_black_24dp) {  
+        @NonNull @Override public Fragment newInstance() {
+            return NearbyFragment.newInstance();
+        }
+    };
+```
+</a>
+
+
+
+
+---
+### Where do the tabs come from? (continued) <!-- 2 -->
 
 *references* `enum NavTab`
 <a href="https://sourcegraph.com/github.com/wikimedia/apps-android-wikipedia@edb0a841475606613ea4f6c3a4cda2d34c62b4e0/-/blob/app/src/main/java/org/wikipedia/navtab/NavTab.java#L16-21:7">
